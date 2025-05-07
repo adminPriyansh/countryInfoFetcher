@@ -1,14 +1,10 @@
 package com.cgi.countryInfoFetcher.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Builder
 public class Currency {
     private String symbol;
     private String name;

@@ -16,7 +16,7 @@ public class FetchCountriesController {
     FetchCountriesService fetchCountriesService;
 
 
-    @GetMapping("/countries/{code}")
+    @GetMapping(value = "/countries/{code}", produces = "application/json")
     public ResponseEntity<CountryResponse> getCountryByCode(@PathVariable String code) {
 
         //Validate if the code is exactly two uppercase letters

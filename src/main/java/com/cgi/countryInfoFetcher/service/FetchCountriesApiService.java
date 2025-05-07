@@ -11,6 +11,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 
+//I am responsible to call the restEndpoint to get the country details and responding back the
+// details to the FetchCountriesService.
 @Service
 public class FetchCountriesApiService {
     private final RestTemplate restTemplate;
@@ -26,6 +28,7 @@ public class FetchCountriesApiService {
         // Call the external API and fetch the response
         try {
             Country[] countries = restTemplate.getForObject(finalUrl, Country[].class);
+            //Fetching the countries and building the response out of it.
             if (countries != null && countries.length > 0) {
                 Country country = countries[0];
                 return CountryResponse.builder()

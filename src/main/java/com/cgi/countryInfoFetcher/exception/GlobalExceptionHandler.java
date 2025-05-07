@@ -17,10 +17,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleCountryNotFoundException(CountryNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
+
     @ExceptionHandler(UpstreamApiException.class)
     public ResponseEntity<String> handleUpstreamApiException(UpstreamApiException ex) {
         return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body(ex.getMessage());
     }
-
-
 }

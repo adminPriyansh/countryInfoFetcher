@@ -15,7 +15,6 @@ public class FetchCountriesController {
     @Autowired
     FetchCountriesService fetchCountriesService;
 
-
     @GetMapping(value = "/countries/{code}", produces = "application/json")
     public ResponseEntity<CountryResponse> getCountryByCode(@PathVariable String code) {
 
